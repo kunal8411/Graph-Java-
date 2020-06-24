@@ -26,8 +26,8 @@ class Solution {
         for(int i =0;i<grid.length;i++){
             for(int j=0;j<grid[i].length;j++){
                 if(grid[i][j]=='1'){
-                    count=count+1;
-                    callDfs(grid,i,j);
+                    count=count+1; //as soon as we find 1 in graph, there is definitely an island
+                    callDfs(grid,i,j); //check its adjacent 
                 }
             }
         }
@@ -38,7 +38,7 @@ class Solution {
         if(i<0 || i>=grid.length || j<0 || j>=grid[i].length || grid[i][j]=='0'){
             return;
         }
-        grid[i][j]='0';
+        grid[i][j]='0'; //change 1 to 0, because we have visited that element once 
         callDfs(grid,i+1,j);//up
         callDfs(grid,i-1,j);//down
         callDfs(grid,i,j-1);//left
