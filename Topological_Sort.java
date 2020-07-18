@@ -56,7 +56,7 @@ public class Topological_Sort {
 				helper(arr,i,visited,stack);
 			}
 		}
-		stack.push(sv);
+		stack.push(sv);  //at the last sv will be last vertex 
 		
 	}
 	
